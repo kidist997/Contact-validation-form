@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Contact Validation Form</title>
   </head>
   <body>
@@ -10,18 +11,43 @@
       <form action="">
         <div class="row">
           <div class="column">
-            <input type="text" name="Name" placeholder="Enter your name*" />
+            <input
+              type="text"
+              name="Name"
+              placeholder="Enter your name*"
+              required
+              oninvalid="this.setCustomValidity('Please enter your name here')"
+              oninput="setCustomValidity('')"
+            />
           </div>
-          <div class="column">
-            <input type="email" name="Email" placeholder="Enter your email*" />
+          <div class="column divide">
+            <input
+              type="email"
+              name="Email"
+              placeholder="Enter your email*"
+              required
+              oninvalid="this.setCustomValidity('Please enter your email here')"
+              oninput="setCustomValidity('')"
+            />
           </div>
-          <div class="column">
-            <input type="tel" name="Phone" placeholder="Enter your Phone*" />
+          <div class="column divide">
+            <input
+              type="tel"
+              name="Phone"
+              placeholder="Enter your phone*"
+              required
+              oninvalid="this.setCustomValidity('Please enter your phone number here')"
+              oninput="setCustomValidity('')"
+              pattern="[1-9]{1}[0-9]{9}"
+            />
           </div>
           <div class="column">
             <textarea
               name="Message"
               placeholder="Enter your message*"
+              required
+              oninvalid="this.setCustomValidity('Please enter your message here')"
+              oninput="setCustomValidity('')"
             ></textarea>
           </div>
           <div class="column">
